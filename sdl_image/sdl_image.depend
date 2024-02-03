@@ -1,0 +1,76 @@
+# depslib dependency file v1.0
+1706587875 source:f:\a_teaching\ltnc\advprogram\sdl_image\main.cpp
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+
+1706812030 source:f:\a_teaching\ltnc\tutorial\sdl_image\main.cpp
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+	"defs.h"
+	"input.h"
+	"draw.h"
+	"logic.h"
+	<ctime>
+
+1706719311 source:f:\a_teaching\ltnc\tutorial\sdl_image\init.cpp
+	<SDL.h>
+	<SDL_image.h>
+	"draw.h"
+	"defs.h"
+	"init.h"
+
+1706779056 f:\a_teaching\ltnc\tutorial\sdl_image\defs.h
+
+1706719342 f:\a_teaching\ltnc\tutorial\sdl_image\init.h
+	<SDL.h>
+	"structs.h"
+	"draw.h"
+
+1706780526 f:\a_teaching\ltnc\tutorial\sdl_image\structs.h
+	<SDL.h>
+	<SDL_image.h>
+	"defs.h"
+
+1706779550 source:f:\a_teaching\ltnc\tutorial\sdl_image\input.cpp
+	<SDL.h>
+	"defs.h"
+	"structs.h"
+
+1706718082 source:f:\a_teaching\ltnc\tutorial\sdl_image\draw.cpp
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+
+1706780440 f:\a_teaching\ltnc\tutorial\sdl_image\input.h
+	<SDL.h>
+	"defs.h"
+	"structs.h"
+
+1706812120 f:\a_teaching\ltnc\tutorial\sdl_image\draw.h
+	<SDL.h>
+	<SDL_image.h>
+	"defs.h"
+
+1706779180 f:\a_teaching\ltnc\tutorial\sdl_image\logic.h
+	<iostream>
+	<list>
+	<SDL.h>
+	<SDL_image.h>
+	"defs.h"
+	"draw.h"
+	"structs.h"
+
+1706730131 f:\a_teaching\ltnc\tutorial\sdl_image\util.h
+
+1706759029 source:f:\a_teaching\ltnc\tutorial\sdl_image\util.cpp
+	<algorithm>
+
+1706772444 source:f:\a_teaching\ltnc\tutorial\sdl_image\stage.cpp
+
+1706812070 source:f:\a_teaching\ltnc\tutorial\sdl_image\sync.cpp
+	<iostream>
+	<SDL.h>
+	"draw.h"
+
