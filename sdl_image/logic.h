@@ -6,7 +6,7 @@
 #include <SDL.h>
 #include <SDL_image.h>
 #include "defs.h"
-#include "draw.h"
+#include "graphics.h"
 #include "structs.h"
 
 void initPlayer(Entity& player) {

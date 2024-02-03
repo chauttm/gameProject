@@ -74,3 +74,34 @@
 	<SDL.h>
 	"draw.h"
 
+1706812030 source:f:\a_teaching\ltnc\gameproject\sdl_image\main.cpp
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+	"defs.h"
+	"input.h"
+	"draw.h"
+	"logic.h"
+	<ctime>
+
+1706980059 f:\a_teaching\ltnc\gameproject\sdl_image\defs.h
+
+1706780440 f:\a_teaching\ltnc\gameproject\sdl_image\input.h
+	<SDL.h>
+	"defs.h"
+	"structs.h"
+
+1706780526 f:\a_teaching\ltnc\gameproject\sdl_image\structs.h
+	<SDL.h>
+	<SDL_image.h>
+	"defs.h"
+
+1706779180 f:\a_teaching\ltnc\gameproject\sdl_image\logic.h
+	<iostream>
+	<list>
+	<SDL.h>
+	<SDL_image.h>
+	"defs.h"
+	"draw.h"
+	"structs.h"
+

@@ -3,7 +3,7 @@
 #include <SDL_image.h>
 #include "defs.h"
 #include "input.h"
-#include "draw.h"
+#include "graphics.h"
 #include "logic.h"
 #include <ctime>
 
