@@ -1,0 +1,34 @@
+# depslib dependency file v1.0
+1706587875 source:f:\a_teaching\ltnc\advprogram\sdl_image\main.cpp
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+
+1708485003 source:f:\a_teaching\ltnc\gameproject\sdl_image_split_file\main.cpp
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+	"graphics.h"
+	"defs.h"
+
+1708482135 f:\a_teaching\ltnc\gameproject\sdl_image_split_file\graphics.h
+	<SDL.h>
+	<SDL_image.h>
+	"defs.h"
+
+1708486239 f:\a_teaching\ltnc\gameproject\sdl_image_split_file\defs.h
+
+1708485003 source:f:\a_teaching\ltnc\gameproject\04_mouse\main.cpp
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+	"graphics.h"
+	"defs.h"
+
+1708482135 f:\a_teaching\ltnc\gameproject\04_mouse\graphics.h
+	<SDL.h>
+	<SDL_image.h>
+	"defs.h"
+
+1708487695 f:\a_teaching\ltnc\gameproject\04_mouse\defs.h
+

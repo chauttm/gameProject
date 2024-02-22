@@ -17,6 +17,8 @@
 
 #define ENEMY_BULLET_SPEED    8
 
+#define MAX_STARS   500
+
 #define BG_COLOR_R 96
 #define BG_COLOR_G 128
 #define BG_COLOR_B 255

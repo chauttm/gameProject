@@ -1,0 +1,39 @@
+# depslib dependency file v1.0
+1707231940 source:f:\a_teaching\ltnc\gameproject\sdl_mouse\main.cpp
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+	"graphics.h"
+	"input.h"
+	"logic.h"
+	<random>
+
+1707231968 f:\a_teaching\ltnc\gameproject\sdl_mouse\graphics.h
+	<SDL.h>
+	<SDL_image.h>
+	"defs.h"
+
+1707231618 f:\a_teaching\ltnc\gameproject\sdl_mouse\defs.h
+
+1707232842 f:\a_teaching\ltnc\gameproject\sdl_mouse\input.h
+	<SDL.h>
+	"defs.h"
+	"structs.h"
+
+1707231451 f:\a_teaching\ltnc\gameproject\sdl_mouse\structs.h
+	<SDL.h>
+	<SDL_image.h>
+	"defs.h"
+
+1707231931 f:\a_teaching\ltnc\gameproject\sdl_mouse\logic.h
+	<iostream>
+	<list>
+	<algorithm>
+	<cmath>
+	<SDL.h>
+	<SDL_image.h>
+	"defs.h"
+	"graphics.h"
+	"structs.h"
+	"input.h"
+

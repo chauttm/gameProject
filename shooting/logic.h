@@ -38,27 +38,56 @@ struct Game {
     Entity player;
     list<Entity*> bullets;
 	list<Entity*> fighters;
+    list<Entity*> explosions;
+	list<Entity*> debris;
 
-    SDL_Texture *bulletTexture, *enemyTexture, *enemyBulletTexture;
+	Star stars[MAX_STARS];
+
+    SDL_Texture *bulletTexture, *enemyTexture, *enemyBulletTexture, *background, *explosionTexture;
     int enemySpawnTimer;
     int stageResetTimer;
 
+    int backgroundX = 0;
+
+    void empty(list<Entity*>& entities) {
+        while (!entities.empty()) {
+            Entity* e = entities.front();
+            entities.pop_front();
+            if (e != &player) delete e;
+        }
+    }
+
+    void initStarfield(void) {
+        for (int i = 0 ; i < MAX_STARS ; i++)	{
+            stars[i].x = rand() % SCREEN_WIDTH;
+            stars[i].y = rand() % SCREEN_HEIGHT;
+            stars[i].speed = 1 + rand() % 8;
+        }
+    }
+
     void reset()
     {
+        empty(fighters);
+        empty(bullets);
+        empty(explosions);
+        empty(debris);
+        fighters.push_back(&player);
 	    initPlayer(player);
+	    initStarfield();
         enemySpawnTimer = 0;
-        stageResetTimer = FRAME_PER_SECOND * 2;
+        stageResetTimer = FRAME_PER_SECOND * 3;
 	}
 
     void init(Graphics& graphics)
     {
         player.texture = graphics.loadTexture("img/ship.png");
         SDL_QueryTexture(player.texture, NULL, NULL, &player.w, &player.h);
-        fighters.push_back(&player);
 
         bulletTexture = graphics.loadTexture("img/tinyBlackBox.png");
         enemyTexture = graphics.loadTexture("img/enemy.png");
         enemyBulletTexture = graphics.loadTexture("img/enemyBullet.png");
+        background = graphics.loadTexture("img/bikiniBottom.jpg");
+        explosionTexture = graphics.loadTexture("img/pngegg.png");
 
         reset();
     }
@@ -195,7 +224,55 @@ struct Game {
             player.y = SCREEN_HEIGHT - player.h;
 	}
 
+	void doBackground(void) {
+        if (--backgroundX < -SCREEN_WIDTH)
+        {
+            backgroundX = 0;
+        }
+    }
+
+    void doStarfield(void) {
+        for (int i = 0 ; i < MAX_STARS ; i++) {
+            stars[i].x -= stars[i].speed;
+
+            if (stars[i].x < 0)
+            {
+                stars[i].x = SCREEN_WIDTH + stars[i].x;
+            }
+        }
+    }
+
+    void doExplosions(void) {
+        auto it = explosions.begin();
+        while (it != explosions.end()) {
+            auto temp = it++;
+            Entity* e = *temp;
+            e->move();
+            if (e->offScreen()) {
+                delete e;
+                explosions.erase(temp);
+            }
+        }
+    }
+/*
+    void doDebris(void) {
+        auto it = debris.begin();
+        while (it != debris.end()) {
+            auto temp = it++;
+            Entity* e = *temp;
+            e->move();
+            e->dy += 0.5;
+            if (--e->life <= 0) {
+                delete e;
+                debris.erase(temp);
+            }
+        }
+    }
+*/
     void doLogic(int keyboard[]) {
+        doBackground();
+        doStarfield();
+
         if (player.health == 0 && --stageResetTimer <= 0) reset();
 
         doPlayer(keyboard);
@@ -203,10 +280,37 @@ struct Game {
         doEnemies();
         doBullets();
         spawnEnemies();
+
+        doExplosions();
+      //  doDebris();
+    }
+
+    void drawBackground(SDL_Renderer* renderer) {
+        SDL_Rect dest;
+        for (int x = backgroundX ; x < SCREEN_WIDTH ; x += SCREEN_WIDTH) {
+            dest.x = x;
+            dest.y = 0;
+            dest.w = SCREEN_WIDTH;
+            dest.h = SCREEN_HEIGHT;
+
+            SDL_RenderCopy(renderer, background, NULL, &dest);
+        }
+    }
+
+    void drawStarfield(SDL_Renderer* renderer) {
+		for (int i = 0 ; i < MAX_STARS ; i++) {
+            int c = 32 * stars[i].speed;
+            SDL_SetRenderDrawColor(renderer, c, c, c, 255);
+            SDL_RenderDrawLine(renderer, stars[i].x, stars[i].y, stars[i].x + 3, stars[i].y);
+        }
     }
 
     void draw(Graphics& graphics)
     {
+        drawBackground(graphics.renderer);
+
+        drawStarfield(graphics.renderer);
+
 		for (Entity* b: bullets)
             graphics.renderTexture(b->texture, b->x, b->y);
 
@@ -217,3 +321,4 @@ struct Game {
 };
 
 #endif // _LOGIC__H
+

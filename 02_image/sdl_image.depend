@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1706587875 source:f:\a_teaching\ltnc\advprogram\sdl_image\main.cpp
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+
+1707152936 source:f:\a_teaching\ltnc\gameproject\02_image\main.cpp
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+

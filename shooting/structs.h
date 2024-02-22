@@ -34,4 +34,27 @@ struct Entity {
 	}
 };
 
+struct Explosion {
+	float x;
+	float y;
+	float dx;
+	float dy;
+	int r, g, b, a;
+};
+
+struct Debris {
+	float x;
+	float y;
+	float dx;
+	float dy;
+	SDL_Rect rect;
+	SDL_Texture *texture;
+	int life;
+};
+
+struct Star {
+	int x;
+	int y;
+	int speed;
+};
 #endif // _APP__H

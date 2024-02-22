@@ -32,12 +32,7 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="defs.h" />
-		<Unit filename="graphics.h" />
-		<Unit filename="input.h" />
-		<Unit filename="logic.h" />
 		<Unit filename="main.cpp" />
-		<Unit filename="structs.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>
