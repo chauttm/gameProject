@@ -35,12 +35,18 @@ int main(int argc, char *argv[])
     int x, y;
     while (true) {
         SDL_GetMouseState(&x, &y);
-        cerr << ((x > 100 && y > 100 && x < 200 && y < 200) ? "In\n" : "Out\n");
+        //cerr << ((x > 100 && y > 100 && x < 200 && y < 200) ? "In\n" : "Out\n");
 
         SDL_PollEvent(&event);
         switch (event.type) {
             case SDL_QUIT:
                  exit(0);
+                 break;
+            case SDL_MOUSEBUTTONDOWN:
+                 cerr << "Down at (" << x << ", " << y << ")\n";
+                 break;
+            case SDL_MOUSEBUTTONUP:
+                 cerr << "Up at (" << x << ", " << y << ")\n";
                  break;
         }
         SDL_Delay(100);
