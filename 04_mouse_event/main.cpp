@@ -22,11 +22,20 @@ int main(int argc, char *argv[])
     Graphics graphics;
     graphics.init();
 
+    SDL_Rect rect;
+    rect.x=100;
+    rect.y=100;
+    rect.h=100;
+    rect.w=100;
+    SDL_SetRenderDrawColor(graphics.renderer, 255, 255, 255, 0 );
+    SDL_RenderFillRect(graphics.renderer, &rect);
+    SDL_RenderPresent(graphics.renderer);
+
     SDL_Event event;
     int x, y;
     while (true) {
         SDL_GetMouseState(&x, &y);
-        cerr << x << ", " << y << endl;
+        cerr << ((x > 100 && y > 100 && x < 200 && y < 200) ? "In\n" : "Out\n");
 
         SDL_PollEvent(&event);
         switch (event.type) {
