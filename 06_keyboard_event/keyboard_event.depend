@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1709048087 source:f:\a_teaching\ltnc\gameproject\06_keyboard_event\main.cpp
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+	"graphics.h"
+	"defs.h"
+	"input.h"
+
+1708482135 f:\a_teaching\ltnc\gameproject\06_keyboard_event\graphics.h
+	<SDL.h>
+	<SDL_image.h>
+	"defs.h"
+
+1708763314 f:\a_teaching\ltnc\gameproject\06_keyboard_event\defs.h
+
+1709048194 f:\a_teaching\ltnc\gameproject\06_keyboard_event\input.h
+	<SDL.h>
+
