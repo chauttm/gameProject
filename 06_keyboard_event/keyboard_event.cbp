@@ -34,7 +34,6 @@
 		</Compiler>
 		<Unit filename="defs.h" />
 		<Unit filename="graphics.h" />
-		<Unit filename="input.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />

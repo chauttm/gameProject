@@ -3,7 +3,6 @@
 #include <SDL_image.h>
 #include "graphics.h"
 #include "defs.h"
-#include "input.h"
 
 using namespace std;
 
@@ -18,7 +17,37 @@ void waitUntilKeyPressed()
     }
 }
 
-//xử lý đơn giản
+int main(int argc, char *argv[])
+{
+    Graphics graphics;
+    graphics.init();
+
+    bool quit = false;
+    SDL_Event e;
+    while( !quit ) {
+        while( SDL_PollEvent( &e ) != 0 ) {
+            if( e.type == SDL_QUIT ) quit = true;
+        }
+
+        const Uint8* currentKeyStates = SDL_GetKeyboardState( NULL );
+
+        if( currentKeyStates[ SDL_SCANCODE_UP ] ) cerr << " Up";
+        if( currentKeyStates[ SDL_SCANCODE_DOWN ] ) cerr << " Down";
+        if( currentKeyStates[ SDL_SCANCODE_LEFT ] ) cerr << " Left";
+        if( currentKeyStates[ SDL_SCANCODE_RIGHT ] ) cerr << " Right";
+
+        cerr << ".\n";
+
+        SDL_Delay(100);
+    }
+
+
+    graphics.quit();
+    return 0;
+}
+
+/*
+//thử nghiệm scancode
 int main(int argc, char *argv[])
 {
     Graphics graphics;
@@ -40,29 +69,6 @@ int main(int argc, char *argv[])
                 default: cerr << "\n.";
             }
         }
-        SDL_Delay(100);
-    }
-
-    graphics.quit();
-    return 0;
-}
-
-/*
-//xử lý được tổ hợp phím
-int main(int argc, char *argv[])
-{
-    Graphics graphics;
-    graphics.init();
-    Input input;
-
-    while (true) {
-        input.get();
-        if (input.quit) break;
-
-        if (input.keyDown[SDL_SCANCODE_UP]) cerr << "Up\n";
-        if (input.keyDown[SDL_SCANCODE_DOWN]) cerr << "Down\n";
-        if (input.keyDown[SDL_SCANCODE_LEFT]) cerr << "Left\n";
-        if (input.keyDown[SDL_SCANCODE_RIGHT]) cerr << "Right\n";
         SDL_Delay(100);
     }
 
