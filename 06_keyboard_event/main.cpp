@@ -23,24 +23,24 @@ int main(int argc, char *argv[])
     graphics.init();
 
     bool quit = false;
-    SDL_Event e;
-    while( !quit ) {
-        while( SDL_PollEvent( &e ) != 0 ) {
-            if( e.type == SDL_QUIT ) quit = true;
+    SDL_Event event;
+    while (!quit) {
+        //Handle events on queue
+        while (SDL_PollEvent(&event)) {
+            if (event.type == SDL_QUIT) quit = true;
         }
 
-        const Uint8* currentKeyStates = SDL_GetKeyboardState( NULL );
+        const Uint8* currentKeyStates = SDL_GetKeyboardState(NULL);
 
-        if( currentKeyStates[ SDL_SCANCODE_UP ] ) cerr << " Up";
-        if( currentKeyStates[ SDL_SCANCODE_DOWN ] ) cerr << " Down";
-        if( currentKeyStates[ SDL_SCANCODE_LEFT ] ) cerr << " Left";
-        if( currentKeyStates[ SDL_SCANCODE_RIGHT ] ) cerr << " Right";
+        if (currentKeyStates[SDL_SCANCODE_UP]) cerr << " Up";
+        if (currentKeyStates[SDL_SCANCODE_DOWN]) cerr << " Down";
+        if (currentKeyStates[SDL_SCANCODE_LEFT]) cerr << " Left";
+        if (currentKeyStates[SDL_SCANCODE_RIGHT]) cerr << " Right";
 
         cerr << ".\n";
 
         SDL_Delay(100);
     }
-
 
     graphics.quit();
     return 0;
