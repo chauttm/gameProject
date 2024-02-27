@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1709004506 source:f:\a_teaching\ltnc\gameproject\05_tictactoe\main.cpp
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+	"graphics.h"
+	"defs.h"
+	"logic.h"
+
+1709005418 f:\a_teaching\ltnc\gameproject\05_tictactoe\graphics.h
+	<SDL.h>
+	<SDL_image.h>
+	"defs.h"
+	"logic.h"
+
+1709005289 f:\a_teaching\ltnc\gameproject\05_tictactoe\defs.h
+
+1709005289 f:\a_teaching\ltnc\gameproject\05_tictactoe\logic.h
+
