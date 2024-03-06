@@ -1,0 +1,40 @@
+# depslib dependency file v1.0
+1706587875 source:f:\a_teaching\ltnc\advprogram\sdl_image\main.cpp
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+
+1708485003 source:f:\a_teaching\ltnc\gameproject\sdl_image_split_file\main.cpp
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+	"graphics.h"
+	"defs.h"
+
+1708482135 f:\a_teaching\ltnc\gameproject\sdl_image_split_file\graphics.h
+	<SDL.h>
+	<SDL_image.h>
+	"defs.h"
+
+1708486239 f:\a_teaching\ltnc\gameproject\sdl_image_split_file\defs.h
+
+1708485003 source:f:\a_teaching\ltnc\gameproject\03_split_file - copy\main.cpp
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+	"graphics.h"
+	"defs.h"
+
+1709740597 f:\a_teaching\ltnc\gameproject\03_split_file - copy\graphics.h
+	<SDL.h>
+	<SDL_image.h>
+	"defs.h"
+
+1709735376 f:\a_teaching\ltnc\gameproject\03_split_file - copy\defs.h
+
+1709735342 source:f:\a_teaching\ltnc\gameproject\03_split_file - copy\graphics.cpp
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+	"graphics.h"
+
