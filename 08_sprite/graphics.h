@@ -8,13 +8,11 @@
 
 struct Sprite {
     SDL_Texture* texture;
-    int frames;
     std::vector<SDL_Rect> clips;
     int currentFrame = 0;
 
-    void init(SDL_Texture* _texture, int _frames, const int _clips [][4]) {
+    void init(SDL_Texture* _texture, int frames, const int _clips [][4]) {
         texture = _texture;
-        frames = _frames;
 
         SDL_Rect clip;
         for (int i = 0; i < frames; i++) {
@@ -26,7 +24,7 @@ struct Sprite {
         }
     }
     void tick() {
-        currentFrame = (currentFrame + 1) % frames;
+        currentFrame = (currentFrame + 1) % clips.size();
     }
 
     const SDL_Rect* getCurrentClip() const {
