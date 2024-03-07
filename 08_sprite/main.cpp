@@ -34,8 +34,8 @@ int main(int argc, char *argv[])
         SDL_Delay(100);
     }
 
-	SDL_DestroyTexture( manTexture ); manTexture = NULL;
-	SDL_DestroyTexture( birdTexture ); birdTexture = NULL;
+	SDL_DestroyTexture( manTexture ); manTexture = nullptr;
+	SDL_DestroyTexture( birdTexture ); birdTexture = nullptr;
 
     graphics.quit();
     return 0;
