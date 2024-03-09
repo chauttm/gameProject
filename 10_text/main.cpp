@@ -35,6 +35,7 @@ int main(int argc, char *argv[])
 
 	SDL_DestroyTexture( helloText );
     helloText = NULL;
+    TTF_CloseFont( font );
 
     graphics.quit();
     return 0;
